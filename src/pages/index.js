@@ -24,7 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout>
-        <Grid container height="90vh" mb={3}>
+        <Grid container height="90vh" mb="60px">
           <Grid
             xs={12}
             sm={12}
@@ -98,7 +98,7 @@ export default function Home() {
             <Clinics key={clinic.id} {...clinic} />
           ))}
         </HeaderComponent>
-        <Box height="44px" />
+        <Box height="20px" />
         <HeaderComponent name="Maqolalar" link="/topics" none={true}>
           <Grid container mb="60px">
             {topics.slice(0, 3).map((item, index) => (

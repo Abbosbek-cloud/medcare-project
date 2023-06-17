@@ -12,6 +12,7 @@ const HeaderComponent = (props) => {
         borderBottom={
           props.bottom ? "1px solid hsla(0, 0%, 0%, .1)" : props.none ? "" : ""
         }
+        pt="24px"
         pb="30px"
         direction="row"
         justifyContent="space-between"
