@@ -147,7 +147,7 @@ const MainLayout = (props) => {
                 </IconBox>
               </Stack>
             </Grid>
-            <Grid item xs={12} sm={12} md={12}>
+            <Grid item xs={12} sm={12} md={12} py={2}>
               <Stack direction="row" justifyContent="space-between">
                 <Stack direction="row" justifyContent="start" gap={3}>
                   <Typography fontSize="16px" fontWeight="400">

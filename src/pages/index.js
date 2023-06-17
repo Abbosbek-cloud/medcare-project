@@ -2,6 +2,11 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import MainLayout from "components/layout/main";
 import HeaderComponent from "components/HeaderComponent";
+import { doctors } from "data/doctors";
+import Doctor1 from "components/cards/Doctor1";
+import { Grid } from "@mui/material";
+import { topics } from "data/topics";
+import Doctor from "components/cards/Doctor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,11 +20,29 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout>
-        <HeaderComponent
-          name="Shifokorlarimiz"
-          link="/topics"
-        ></HeaderComponent>
-        <HeaderComponent name="Maqolalar" link="/topics"></HeaderComponent>
+        <HeaderComponent name="Shifokorlarimiz" link="/topics">
+          <Grid container spacing={2}>
+            {doctors.slice(0, 2).map((item) => (
+              <Grid item xs={12} sm={12} md={6}>
+                <Doctor1 key={item.id} {...item} />
+              </Grid>
+            ))}
+          </Grid>
+        </HeaderComponent>
+        <HeaderComponent name="Maqolalar" link="/topics">
+          <Grid container>
+            {topics.slice(0, 3).map((item, index) => (
+              <Grid item xs={12} sm={12} md={4}>
+                <Doctor
+                  key={item.id}
+                  {...item}
+                  isIllness={true}
+                  isSelected={index === 1}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </HeaderComponent>
         <HeaderComponent name="Maqolalar" link="/topics"></HeaderComponent>
       </MainLayout>
     </>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const HeaderComponent = (props) => {
+  console.log(props);
   return (
     <Container>
       <Stack
@@ -18,6 +19,7 @@ const HeaderComponent = (props) => {
           <Link href={props.link}>Yana</Link>
         </Typography>
       </Stack>
+      <Stack mb={2}>{props.children}</Stack>
     </Container>
   );
 };

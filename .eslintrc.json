@@ -4,7 +4,6 @@
     "quotes": "off",
     "semi": "off",
     "comma-dangle": "off",
-    "no-console": "off",
     "react/jsx-key": "off",
     "react/no-unescaped-entities": "off"
   }

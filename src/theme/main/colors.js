@@ -35,7 +35,7 @@ const success = {
 };
 
 const neutral = {
-  main: "rgba(86, 106, 127, 0.1)",
+  main: "#848484",
 };
 
 const info = {
@@ -70,7 +70,6 @@ const background = {
 
 const black = {
   main: "#000000",
-  dark: "#000",
 };
 
 const disabled = {
