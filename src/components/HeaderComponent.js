@@ -6,9 +6,13 @@ const HeaderComponent = (props) => {
   return (
     <Container>
       <Stack
-        borderTop={props.bottom ? "" : "1px solid hsla(0, 0%, 0%, .1)"}
-        borderBottom={props.bottom ? "1px solid hsla(0, 0%, 0%, .1)" : ""}
-        py={2}
+        borderTop={
+          props.bottom ? "" : props.none ? "" : "1px solid hsla(0, 0%, 0%, .1)"
+        }
+        borderBottom={
+          props.bottom ? "1px solid hsla(0, 0%, 0%, .1)" : props.none ? "" : ""
+        }
+        pb="30px"
         direction="row"
         justifyContent="space-between"
       >

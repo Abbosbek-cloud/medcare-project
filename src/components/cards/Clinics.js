@@ -6,8 +6,8 @@ import React from "react";
 
 const Clinics = (props) => {
   return (
-    <Box borderBottom="1px solid hsla(0, 0%, 0%, .1)">
-      <Grid container spacing={2} mb={2} py={3}>
+    <Box borderBottom="1px solid hsla(0, 0%, 0%, .1)" pb="60px">
+      <Grid container spacing={2} mb={2} pt="30px">
         <Grid item xs={12} sm={12} md={3}>
           <Box
             component="img"
@@ -18,11 +18,21 @@ const Clinics = (props) => {
           />
         </Grid>
         <Grid item xs={12} sm={12} md={6}>
-          <Stack direction="column" justifyContent="space-between" gap="10px">
-            <Typography fontSize="20px" fontWeight="600" color="text.dark">
+          <Stack direction="column" justifyContent="space-between" gap="16px">
+            <Typography
+              fontSize="20px"
+              fontWeight="600"
+              lineHeight="25px"
+              color="text.dark"
+            >
               {props.name}
             </Typography>
-            <Typography fontSize="15px" fontWeight="400" color="text.light">
+            <Typography
+              fontSize="15px"
+              lineHeight="150%"
+              fontWeight="400"
+              color="text.light"
+            >
               {props.description}
             </Typography>
             <Stack
@@ -32,7 +42,7 @@ const Clinics = (props) => {
               gap="10px"
             >
               <AddressIcon />
-              <Typography fontSize="15px" fontWeight="400">
+              <Typography fontSize="15px" fontWeight="400" lineHeight="150%">
                 {props.address}
               </Typography>
             </Stack>
@@ -43,7 +53,7 @@ const Clinics = (props) => {
               gap="10px"
             >
               <CalendarIcon />
-              <Typography fontSize="15px" fontWeight="400">
+              <Typography fontSize="15px" fontWeight="400" lineHeight="150%">
                 {props.time}
               </Typography>
             </Stack>

@@ -4,7 +4,7 @@ import MainLayout from "components/layout/main";
 import HeaderComponent from "components/HeaderComponent";
 import { doctors } from "data/doctors";
 import Doctor1 from "components/cards/Doctor1";
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Divider, Grid, Stack, Typography } from "@mui/material";
 import { topics } from "data/topics";
 import Doctor from "components/cards/Doctor";
 import EastIcon from "@mui/icons-material/East";
@@ -79,7 +79,7 @@ export default function Home() {
           src="/bgImage.png"
           width="100%"
           height="100vh"
-          mb={3}
+          mb="60px"
         />
         <HeaderComponent name="Shifokorlarimiz" link="/topics">
           <Grid container spacing={2}>
@@ -89,15 +89,18 @@ export default function Home() {
               </Grid>
             ))}
           </Grid>
+          <Divider
+            sx={{ border: "1px solid hsla(0, 0%, 0%, .1)", mt: "60px" }}
+          />
         </HeaderComponent>
-
         <HeaderComponent name="Klinikalar" link="/clinics" bottom={true}>
           {clinics.map((clinic) => (
             <Clinics key={clinic.id} {...clinic} />
           ))}
         </HeaderComponent>
-        <HeaderComponent name="Maqolalar" link="/topics">
-          <Grid container>
+        <Box height="44px" />
+        <HeaderComponent name="Maqolalar" link="/topics" none={true}>
+          <Grid container mb="60px">
             {topics.slice(0, 3).map((item, index) => (
               <Grid item xs={12} sm={12} md={4}>
                 <Doctor
@@ -110,13 +113,8 @@ export default function Home() {
             ))}
           </Grid>
         </HeaderComponent>
-        <Box
-          component="img"
-          src="/bgImage2.png"
-          width="100%"
-          height="100vh"
-          mb={3}
-        />
+        <Box component="img" src="/bgImage2.png" width="100%" height="100vh" />
+        <Box height="100px" bgcolor="#fdfdfd" />
       </MainLayout>
     </>
   );

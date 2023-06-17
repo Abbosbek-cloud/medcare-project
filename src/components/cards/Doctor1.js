@@ -20,6 +20,7 @@ const Doctor1 = (props) => {
           color="text.light"
           variant="body1"
           fontWeight="500"
+          lineHeight="120%"
         >
           {props.kasbi}
         </Typography>
@@ -32,13 +33,16 @@ const Doctor1 = (props) => {
       >
         {props.about}
       </Typography>
-      <Typography
-        sx={{ width: "calc(100% - 125px)" }}
-        variant="h6"
-        fontWeight="400"
-      >
-        {props.citate}
-      </Typography>
+      <Box>
+        <Typography
+          sx={{ width: "calc(100% - 125px)" }}
+          variant="h6"
+          fontWeight="400"
+          lineHeight="150%"
+        >
+          {props.citate}
+        </Typography>
+      </Box>
     </Doctor1Container>
   );
 };
