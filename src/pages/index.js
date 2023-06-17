@@ -9,6 +9,8 @@ import { topics } from "data/topics";
 import Doctor from "components/cards/Doctor";
 import EastIcon from "@mui/icons-material/East";
 import Link from "next/link";
+import { clinics } from "data/clinics";
+import Clinics from "components/cards/Clinics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -88,6 +90,12 @@ export default function Home() {
             ))}
           </Grid>
         </HeaderComponent>
+
+        <HeaderComponent name="Klinikalar" link="/clinics" bottom={true}>
+          {clinics.map((clinic) => (
+            <Clinics key={clinic.id} {...clinic} />
+          ))}
+        </HeaderComponent>
         <HeaderComponent name="Maqolalar" link="/topics">
           <Grid container>
             {topics.slice(0, 3).map((item, index) => (
@@ -102,7 +110,13 @@ export default function Home() {
             ))}
           </Grid>
         </HeaderComponent>
-        <HeaderComponent name="Maqolalar" link="/topics"></HeaderComponent>
+        <Box
+          component="img"
+          src="/bgImage2.png"
+          width="100%"
+          height="100vh"
+          mb={3}
+        />
       </MainLayout>
     </>
   );
