@@ -7,10 +7,10 @@ const Doctor = (props) => {
   return (
     <DoctorContainer isSelected={props.isSelected}>
       <Box component="img" src={props.image} className="cardImage" />
-      <Typography fontSize="32px" fontWeight="500" color="text.dark">
+      <Typography fontSize="30px" fontWeight="600" color="text.dark">
         {props.name}
       </Typography>
-      <Typography my={2} fontSize="22px" fontWeight="400" color="text.light">
+      <Typography my={2} fontSize="18px" fontWeight="400" color="text.light">
         {props.description}
       </Typography>
       {props.isIllness && (
@@ -19,7 +19,7 @@ const Doctor = (props) => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Typography fontSize="18px" fontWeight="400" color="text.light">
+          <Typography fontSize="15px" fontWeight="400" color="text.light">
             {props.time}
           </Typography>
           <Stack
@@ -29,7 +29,7 @@ const Doctor = (props) => {
             gap={2}
           >
             <RemoveRedEyeIcon color="neutral.main" width="40px" />
-            <Typography fontSize="18px" fontWeight="400" color="text.light">
+            <Typography fontSize="15px" fontWeight="400" color="text.light">
               {props.shown}
             </Typography>
           </Stack>

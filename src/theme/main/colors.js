@@ -39,7 +39,7 @@ const neutral = {
 };
 
 const info = {
-  main: "#2196F3",
+  main: "#2AABEE",
   light: "#64B6F7",
 };
 
@@ -85,6 +85,7 @@ const text = {
   dark: "#000000",
   lightDark: "#242424",
   footer: "#555555",
+  littleText: "#454545",
 };
 
 const divider = "#E6E8F0";
