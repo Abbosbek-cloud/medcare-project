@@ -20,10 +20,10 @@ export const Doctor1Container = styled(Box)(({ theme }) => ({
 }));
 
 export const DoctorContainer = styled(Box)(
-  ({ theme, isPhone, isSelected }) => ({
+  ({ theme, isPhone, isselected }) => ({
     padding: "20px",
     borderTop: "1px solid hsla(0, 0%, 0%, .1)",
-    borderInline: isSelected
+    borderInline: isselected
       ? "1px solid hsla(0, 0%, 0%, .1)"
       : isPhone
       ? ""

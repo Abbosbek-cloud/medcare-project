@@ -1,35 +1,20 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import { DoctorContainer } from "components/styled";
 import React from "react";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import DoctorDrawer from "components/drawers/DoctorDrawer";
 
-const Doctor = (props) => {
+const DrawerDoctor = (props) => {
   const [modal, setModal] = React.useState(false);
-  const toggleDrawer = (_, open) => (event) => {
-    if (
-      event &&
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
+  const toggleDrawer = (open) => {
     console.log(open);
-
     setModal(open);
-  };
-
-  const handleOpenModal = (e) => {
-    if (props.isDoctorPage) {
-      toggleDrawer("", true)(e);
-    }
   };
 
   return (
     <DoctorContainer
       isselected={props.isselected ? "true" : undefined}
       sx={{ cursor: "pointer" }}
-      onClick={handleOpenModal}
     >
       <Box component="img" src={props.image} className="cardImage" />
       <Typography
@@ -49,6 +34,15 @@ const Doctor = (props) => {
       >
         {props.description || props.about}
       </Typography>
+      {props.isDoctorPage && (
+        <Button
+          variant="outlined"
+          color="info"
+          onClick={() => toggleDrawer(true)}
+        >
+          Batafsil
+        </Button>
+      )}
       {props.isIllness && (
         <Stack
           direction="row"
@@ -81,9 +75,13 @@ const Doctor = (props) => {
           </Stack>
         </Stack>
       )}
-      <DoctorDrawer handleDrawerToggle={toggleDrawer} mobileOpen={modal} />
+      <DoctorDrawer
+        handleDrawerToggle={toggleDrawer}
+        mobileOpen={modal}
+        data={{ ...props }}
+      />
     </DoctorContainer>
   );
 };
 
-export default Doctor;
+export default DrawerDoctor;
