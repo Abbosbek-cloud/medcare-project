@@ -22,7 +22,7 @@ const Doctor = (props) => {
         lineHeight="150%"
         color="text.light"
       >
-        {props.description}
+        {props.description || props.about}
       </Typography>
       {props.isIllness && (
         <Stack
