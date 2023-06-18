@@ -175,11 +175,11 @@ const MainLayout = (props) => {
 
 export default MainLayout;
 
-const IconBox = styled(Box)(({}) => ({
+export const IconBox = styled(Box)(({}) => ({
   width: "36px",
   height: "36px",
   borderRadius: "10px",
-  border: "1px solid #000",
+  border: "1px solid hsla(0, 0%, 0%, .1)",
   cursor: "pointer",
   display: "flex",
   justifyContent: "center",

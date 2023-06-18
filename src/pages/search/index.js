@@ -36,7 +36,7 @@ const Page = () => {
           </Typography>
         </Stack>
         <Stack p={3}>
-          <Stack borderTop="1px solid #000" pt={2}>
+          <Stack borderTop="1px solid hsla(0, 0%, 0%, .1)" pt={2}>
             <Button variant="contained" color="success">
               Keyingisi
             </Button>

@@ -11,6 +11,7 @@ import EastIcon from "@mui/icons-material/East";
 import Link from "next/link";
 import { clinics } from "data/clinics";
 import Clinics from "components/cards/Clinics";
+import MainSection from "components/sections/main";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout>
+        <MainSection />
         <Grid container height="90vh" mb="60px">
           <Grid
             xs={12}

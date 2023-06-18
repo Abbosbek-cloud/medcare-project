@@ -1,6 +1,6 @@
 // doctor cards
 
-import { Box, styled } from "@mui/material";
+import { Box, Typography, styled } from "@mui/material";
 
 export const Doctor1Container = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.header,
@@ -36,3 +36,11 @@ export const DoctorContainer = styled(Box)(
     },
   })
 );
+
+export const MainHeader = styled(Typography)(({ theme }) => ({
+  color: "hsla(0, 0%, 14%, 1)",
+  fontSize: "100px",
+  fontWeight: "500",
+  lineHeight: "122px",
+  fontStyle: "normal",
+}));
