@@ -93,7 +93,7 @@ const DoctorDrawer = (props) => {
         <DrawerTable name="Ish joyi" value={user.workStation} />
         <DrawerTable
           name="Manzil"
-          value={user.address.split(" ").slice(0, 3).join(" ")}
+          value={user?.address?.split(" ")?.slice(0, 3)?.join(" ")}
         />
         <DrawerTable name="Klinika" value={user.price} />
         <DrawerTable name="Ish vaqti" value={user.workTime} />
