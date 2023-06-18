@@ -109,7 +109,7 @@ export default function Home() {
                   key={item.id}
                   {...item}
                   isIllness={true}
-                  isSelected={index === 1}
+                  isselected={[1, 4, 7].includes(index) ? "true" : undefined}
                 />
               </Grid>
             ))}
