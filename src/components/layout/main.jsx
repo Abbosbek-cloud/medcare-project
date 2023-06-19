@@ -1,4 +1,14 @@
-import { Box, Container, Grid, Stack, Typography, styled } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  IconButton,
+  Stack,
+  Typography,
+  styled,
+} from "@mui/material";
+import useWindowSize from "components/hooks/useWindowSize";
 import FaceBookIcon from "components/icons/FaceBookIcon";
 import InstagramIcon from "components/icons/InstagramIcon";
 import TelegramIcon from "components/icons/TelegramIcon";
@@ -9,6 +19,9 @@ import React from "react";
 
 const MainLayout = (props) => {
   const router = useRouter();
+  const windowWidth = useWindowSize();
+  let isPhone = windowWidth > 900;
+  // console.log(window);
   return (
     <>
       <Stack py={2} sx={{ backgroundColor: "background.header" }}>
@@ -30,44 +43,47 @@ const MainLayout = (props) => {
               MedCare
             </Typography>
           </Stack>
-          <Stack direction="row">
-            <NavItem
-              link="/aboutus"
-              name="Biz haqimizda"
-              isActive={router.pathname.startsWith("/aboutus")}
-              isLast={false}
-            />
-            <NavItem
-              link="/doctors"
-              name="Shifokorlar"
-              isActive={router.pathname.startsWith("/doctors")}
-              isLast={false}
-            />
-            <NavItem
-              link="/clinics"
-              name="Klinikalar"
-              isActive={router.pathname.startsWith("/clinics")}
-              isLast={false}
-            />
-            <NavItem
-              link="/pills"
-              name="Dori-darmonlar"
-              isActive={router.pathname.startsWith("/pills")}
-              isLast={false}
-            />
-            <NavItem
-              link="/topics"
-              name="Maqolalar"
-              isActive={router.pathname.startsWith("/topics")}
-              isLast={false}
-            />
-            <NavItem
-              link="/contacts"
-              name="Kontaktlar"
-              isActive={router.pathname.startsWith("/contacts")}
-              isLast={true}
-            />
-          </Stack>
+          {isPhone && (
+            <Stack direction="row">
+              <NavItem
+                link="/aboutus"
+                name="Biz haqimizda"
+                isActive={router.pathname.startsWith("/aboutus")}
+                isLast={false}
+              />
+              <NavItem
+                link="/doctors"
+                name="Shifokorlar"
+                isActive={router.pathname.startsWith("/doctors")}
+                isLast={false}
+              />
+              <NavItem
+                link="/clinics"
+                name="Klinikalar"
+                isActive={router.pathname.startsWith("/clinics")}
+                isLast={false}
+              />
+              <NavItem
+                link="/pills"
+                name="Dori-darmonlar"
+                isActive={router.pathname.startsWith("/pills")}
+                isLast={false}
+              />
+              <NavItem
+                link="/topics"
+                name="Maqolalar"
+                isActive={router.pathname.startsWith("/topics")}
+                isLast={false}
+              />
+              <NavItem
+                link="/contacts"
+                name="Kontaktlar"
+                isActive={router.pathname.startsWith("/contacts")}
+                isLast={true}
+              />
+            </Stack>
+          )}
+          {!isPhone && <Button></Button>}
         </Container>
       </Stack>
       <Box sx={{ minHeight: "25vh", mb: 5 }}>{props.children}</Box>
