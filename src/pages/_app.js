@@ -2,28 +2,6 @@ import "styles/globals.css";
 import Head from "next/head";
 import MuiTheme from "theme";
 import { useEffect } from "react";
-import i18next from "i18next";
-import { initReactI18next } from "react-i18next";
-import HttpApi from "i18next-http-backend";
-import LanguageDetector from "i18next-browser-languagedetector";
-
-i18next
-  .use(HttpApi)
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    fallbackLng: "uz",
-    supportedLngs: ["en", "uz", "ru"],
-    debug: false,
-    detection: {
-      order: ["path", "cookie", "htmlTag"],
-      caches: ["cookie"],
-    },
-    react: { useSuspense: true },
-    backend: {
-      loadPath: "/locales/{{lng}}/translation.json",
-    },
-  });
 
 export default function App({ Component, pageProps: { ...pageProps } }) {
   const getLayout = Component.getLayout ?? ((page) => page);
