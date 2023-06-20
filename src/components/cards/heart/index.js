@@ -1,4 +1,5 @@
 import { Box, Stack } from "@mui/material";
+import HeartEllipse from "components/icons/HeartEllipse";
 import React from "react";
 
 const HeartCart = () => {
@@ -7,12 +8,14 @@ const HeartCart = () => {
       position="absolute"
       right="0"
       bottom="0"
-      width="60%"
-      sx={{ backgroundImage: "url(/heart.png)" }}
+      width="50%"
+      background="blue"
     >
-      <Stack position="relative">
+      <Stack background="aqua">
         lorem
-        {/* <Box component="img" src="/heart.png" width="499px" height="479px" /> */}
+        <HeartEllipse />
+        <Box component="img" src="/heart.png" width="499px" height="479px" />
+        {/* width="36" height="36" position="absolute" left="10" */}
       </Stack>
     </Stack>
   );

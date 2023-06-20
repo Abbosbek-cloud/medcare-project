@@ -9,9 +9,11 @@ const MainSection = () => {
   const router = useRouter();
   const width = useWindowSize();
   let isPhone = width > 900;
+
   return (
     <Stack position="relative">
-      <Box bgcolor="background.header">
+      <Box bgcolor="aqua">
+        {/* bgcolor="background.header" */}
         <Container>
           <Stack height={isPhone ? "100vh" : "50vh"}>
             <Stack
