@@ -2,6 +2,9 @@ import "styles/globals.css";
 import Head from "next/head";
 import MuiTheme from "theme";
 import { useEffect } from "react";
+import { Provider } from "react-redux";
+import { store, persistor } from "store/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 export default function App({ Component, pageProps: { ...pageProps } }) {
   const getLayout = Component.getLayout ?? ((page) => page);
@@ -28,7 +31,11 @@ export default function App({ Component, pageProps: { ...pageProps } }) {
           rel="stylesheet"
         />
       </Head>
-      <MuiTheme>{getLayout(<Component {...pageProps} />)}</MuiTheme>
+      <Provider store={store}>
+        <PersistGate persistor={persistor}>
+          <MuiTheme>{getLayout(<Component {...pageProps} />)}</MuiTheme>
+        </PersistGate>
+      </Provider>
     </>
   );
 }
