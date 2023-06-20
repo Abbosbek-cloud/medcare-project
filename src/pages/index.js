@@ -12,10 +12,13 @@ import Link from "next/link";
 import { clinics } from "data/clinics";
 import Clinics from "components/cards/Clinics";
 import MainSection from "components/sections/main";
+import useWindowSize from "components/hooks/useWindowSize";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const windowWidth = useWindowSize();
+  const isTablet = windowWidth > 900;
   return (
     <>
       <Head>
@@ -47,8 +50,15 @@ export default function Home() {
               }}
             />
           </Grid>
-          <Grid xs={12} sm={12} md={6} display="flex" alignItems="center">
-            <Stack width="60%" pl={2}>
+          <Grid
+            xs={12}
+            sm={12}
+            md={6}
+            display="flex"
+            alignItems="center"
+            minHeight={isTablet ? "" : "20vh"}
+          >
+            <Stack width={!isTablet ? "100%" : "60%"} pl={2}>
               <Typography fontSize="32px" fontWeight="600">
                 Biz haqimizda
               </Typography>
@@ -80,8 +90,9 @@ export default function Home() {
           component="img"
           src="/bgImage.png"
           width="100%"
-          height="100vh"
+          height={isTablet ? "100vh" : "50vh"}
           mb="60px"
+          sx={{ objectFit: "cover" }}
         />
         <HeaderComponent name="Shifokorlarimiz" link="/topics">
           <Grid container spacing={2}>
@@ -115,7 +126,13 @@ export default function Home() {
             ))}
           </Grid>
         </HeaderComponent>
-        <Box component="img" src="/bgImage2.png" width="100%" height="100vh" />
+        <Box
+          component="img"
+          src="/bgImage2.png"
+          width="100%"
+          height={isTablet ? "100vh" : "50vh"}
+          sx={{ objectFit: "cover" }}
+        />
         <Box height="100px" bgcolor="#fdfdfd" />
       </MainLayout>
     </>
