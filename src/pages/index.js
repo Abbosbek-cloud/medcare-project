@@ -94,7 +94,7 @@ export default function Home() {
           mb="60px"
           sx={{ objectFit: "cover" }}
         />
-        <HeaderComponent name="Shifokorlarimiz" link="/topics">
+        <HeaderComponent name="Shifokorlarimiz" link="/doctors">
           <Grid container spacing={2}>
             {doctors.slice(0, 2).map((item) => (
               <Grid item xs={12} sm={12} md={6}>

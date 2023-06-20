@@ -1,6 +1,9 @@
 import { Container, Stack } from "@mui/material";
+import CustomPagination from "components/CustomPagination";
+import Clinics from "components/cards/Clinics";
 import MainLayout from "components/layout/main";
 import { MainHeader } from "components/styled";
+import { clinics } from "data/clinics";
 import Head from "next/head";
 import React from "react";
 
@@ -22,6 +25,13 @@ const Page = () => {
             </MainHeader>
           </Container>
         </Stack>
+        <Container>
+          {[...clinics, ...clinics, ...clinics].map((clinic) => (
+            <Clinics key={clinic.id} {...clinic} />
+          ))}
+
+          <CustomPagination />
+        </Container>
       </MainLayout>
     </>
   );

@@ -1,4 +1,5 @@
 import { Container, Grid, Stack } from "@mui/material";
+import CustomPagination from "components/CustomPagination";
 import DrawerDoctor from "components/cards/DrawerDoctor";
 import MainLayout from "components/layout/main";
 import NavItem from "components/navItem";
@@ -78,6 +79,7 @@ const Page = () => {
               </Grid>
             ))}
           </Grid>
+          <CustomPagination />
         </Container>
       </MainLayout>
     </>
