@@ -7,7 +7,6 @@ import DoctorDrawer from "components/drawers/DoctorDrawer";
 const DrawerDoctor = (props) => {
   const [modal, setModal] = React.useState(false);
   const toggleDrawer = (open) => {
-    console.log(open);
     setModal(open);
   };
 
