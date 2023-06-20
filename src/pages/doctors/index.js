@@ -30,7 +30,94 @@ const Page = () => {
           </Container>
         </Stack>
         <Container>
-          <Stack mb="30px" direction="row">
+          <Stack
+            pb="15px"
+            mb="30px"
+            overflow="auto"
+            width="100%"
+            direction="row"
+            display="flex"
+            sx={{
+              /* width */
+              "&::-webkit-scrollbar": {
+                width: "2px",
+              },
+
+              /* Track */
+              "&::-webkit-scrollbar-track": {
+                background: "#f1f1f1",
+              },
+
+              /* Handle */
+              "&::-webkit-scrollbar-thumb": {
+                background: "#888",
+              },
+
+              /* Handle on hover */
+              "&::-webkit-scrollbar-thumb:hover": {
+                background: "#555",
+              },
+
+              "@media(max-width: 900px)": {
+                pb: 0,
+                "&::-webkit-scrollbar": {
+                  display: "none",
+                  // width: "3px !important",
+                },
+
+                /* Track */
+                "&::-webkit-scrollbar-track": {
+                  background: "#f1f1f1",
+                },
+
+                /* Handle */
+                "&::-webkit-scrollbar-thumb": {
+                  background: "#888",
+                },
+
+                /* Handle on hover */
+                "&::-webkit-scrollbar-thumb:hover": {
+                  background: "#555",
+                },
+              },
+            }}
+          >
+            <NavItem
+              link="/doctors"
+              name="Barchasi"
+              isActive={router.pathname == "/doctors" && !router.query.search}
+              isLast={false}
+            />
+            <NavItem
+              link="/doctors?search=chiropraktor"
+              name="Chiropraktor"
+              isActive={router.query.search == "chiropraktor"}
+              isLast={false}
+            />
+            <NavItem
+              link="/doctors?search=stomatologTerapevt"
+              name="Stomatolog-terapevt"
+              isActive={router.query.search == "stomatologTerapevt"}
+              isLast={false}
+            />
+            <NavItem
+              link="/doctors?search=ginekolog"
+              name="Ginekolog"
+              isActive={router.query.search == "ginekolog"}
+              isLast={false}
+            />
+            <NavItem
+              link="/doctors?search=jarroh"
+              name="Jarroh"
+              isActive={router.query.search == "jarroh"}
+              isLast={false}
+            />
+            <NavItem
+              link="/doctors?search=kardiolog"
+              name="Kardiolog"
+              isActive={router.query.search == "kardiolog"}
+              isLast={true}
+            />
             <NavItem
               link="/doctors"
               name="Barchasi"
