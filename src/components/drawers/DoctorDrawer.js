@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Drawer,
-  Grid,
-  IconButton,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Drawer, Grid, Stack, Typography } from "@mui/material";
 import CancelIcon from "components/icons/CancelIcon";
 import React from "react";
 import DrawerTable from "./DrawerTable";

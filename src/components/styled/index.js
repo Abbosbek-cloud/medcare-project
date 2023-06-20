@@ -43,4 +43,9 @@ export const MainHeader = styled(Typography)(({ theme }) => ({
   fontWeight: "500",
   lineHeight: "122px",
   fontStyle: "normal",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "36px",
+    fontWeight: "500",
+    lineHeight: "52px",
+  },
 }));
