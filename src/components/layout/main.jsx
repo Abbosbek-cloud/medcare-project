@@ -16,10 +16,17 @@ import NavItem from "components/navItem";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import MenuDrawer from "components/drawers/MenuDrawer";
 
 const MainLayout = (props) => {
   const router = useRouter();
   const windowWidth = useWindowSize();
+  const [drawer, setDrawer] = React.useState(false);
+
+  const toggleDrawer = (open) => {
+    setDrawer(open);
+  };
   let isPhone = windowWidth > 900;
   // console.log(window);
   return (
@@ -83,7 +90,15 @@ const MainLayout = (props) => {
               />
             </Stack>
           )}
-          {!isPhone && <Button></Button>}
+          <MenuDrawer open={drawer} toggleDrawer={toggleDrawer} />
+          {!isPhone && (
+            <Button
+              onClick={() => toggleDrawer(true)}
+              sx={{ p: 0, minWidth: "30px", minHeight: "30px" }}
+            >
+              <MenuIcon sx={{ fontSize: "25px" }} />
+            </Button>
+          )}
         </Container>
       </Stack>
       <Box sx={{ minHeight: "25vh", mb: 5 }}>{props.children}</Box>
