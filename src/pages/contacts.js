@@ -1,4 +1,5 @@
 import { Button, Container, Grid, Stack, Typography } from "@mui/material";
+import useWindowSize from "components/hooks/useWindowSize";
 import FaceBookIcon from "components/icons/FaceBookIcon";
 import InstagramIcon from "components/icons/InstagramIcon";
 import TelegramIcon from "components/icons/TelegramIcon";
@@ -10,6 +11,8 @@ import Head from "next/head";
 import React from "react";
 
 const Page = () => {
+  const width = useWindowSize();
+  let isTablet = width > 900;
   return (
     <>
       <Head>
@@ -50,7 +53,7 @@ const Page = () => {
                 >
                   <a href="tel:+998775558587">+998 (77) 555-85-87</a>
                 </Typography>
-                <Stack direction="row" justifyContent="start" gap={2}>
+                <Stack direction="row" justifyContent="start" gap={2} mb={2}>
                   <IconBox>
                     <FaceBookIcon />
                   </IconBox>
@@ -103,7 +106,11 @@ const Page = () => {
                         <Button
                           variant="contained"
                           color="success"
-                          sx={{ p: "18px 48px" }}
+                          fullWidth={isTablet ? false : true}
+                          sx={{
+                            p: isTablet ? "18px 48px" : "10px 25px",
+                            mt: isTablet ? 0 : 2,
+                          }}
                         >
                           <Typography
                             fontSize="16px"

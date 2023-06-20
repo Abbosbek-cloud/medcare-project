@@ -1,4 +1,5 @@
 import { Container, Stack } from "@mui/material";
+import CustomPagination from "components/CustomPagination";
 import MainLayout from "components/layout/main";
 import { MainHeader } from "components/styled";
 import Head from "next/head";
@@ -22,6 +23,9 @@ const Page = () => {
             </MainHeader>
           </Container>
         </Stack>
+        <Container>
+          <CustomPagination />
+        </Container>
       </MainLayout>
     </>
   );
