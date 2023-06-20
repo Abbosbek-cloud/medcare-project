@@ -59,10 +59,8 @@ const Page = () => {
               },
 
               "@media(max-width: 900px)": {
-                pb: 0,
                 "&::-webkit-scrollbar": {
-                  display: "none",
-                  // width: "3px !important",
+                  width: "initial",
                 },
 
                 /* Track */
@@ -82,42 +80,6 @@ const Page = () => {
               },
             }}
           >
-            <NavItem
-              link="/doctors"
-              name="Barchasi"
-              isActive={router.pathname == "/doctors" && !router.query.search}
-              isLast={false}
-            />
-            <NavItem
-              link="/doctors?search=chiropraktor"
-              name="Chiropraktor"
-              isActive={router.query.search == "chiropraktor"}
-              isLast={false}
-            />
-            <NavItem
-              link="/doctors?search=stomatologTerapevt"
-              name="Stomatolog-terapevt"
-              isActive={router.query.search == "stomatologTerapevt"}
-              isLast={false}
-            />
-            <NavItem
-              link="/doctors?search=ginekolog"
-              name="Ginekolog"
-              isActive={router.query.search == "ginekolog"}
-              isLast={false}
-            />
-            <NavItem
-              link="/doctors?search=jarroh"
-              name="Jarroh"
-              isActive={router.query.search == "jarroh"}
-              isLast={false}
-            />
-            <NavItem
-              link="/doctors?search=kardiolog"
-              name="Kardiolog"
-              isActive={router.query.search == "kardiolog"}
-              isLast={true}
-            />
             <NavItem
               link="/doctors"
               name="Barchasi"
