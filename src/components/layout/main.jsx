@@ -151,7 +151,11 @@ const MainLayout = (props) => {
             </Link>
           </Grid>
           <Grid item xs={12} sm={12} md={3}>
-            <Stack direction="row" justifyContent="end" gap={2}>
+            <Stack
+              direction="row"
+              justifyContent={!isPhone ? "start" : "end"}
+              gap={2}
+            >
               <IconBox>
                 <FaceBookIcon />
               </IconBox>
@@ -166,8 +170,17 @@ const MainLayout = (props) => {
         </Grid>
         <Grid container>
           <Grid item xs={12} sm={12} md={12} py={2}>
-            <Stack direction="row" justifyContent="space-between">
-              <Stack direction="row" justifyContent="start" gap={3}>
+            <Stack
+              direction={!isPhone ? "column" : "row"}
+              justifyContent="space-between"
+              gap={!isPhone ? 3 : 0}
+              textAlign={!isPhone ? "center" : ""}
+            >
+              <Stack
+                direction="row"
+                justifyContent={!isPhone ? "space-around" : "start"}
+                gap={3}
+              >
                 <Typography fontSize="16px" fontWeight="400">
                   <a href="tel:+998775558587">+998 (77) 555-85-87</a>
                 </Typography>
