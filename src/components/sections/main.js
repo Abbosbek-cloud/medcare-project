@@ -1,5 +1,13 @@
-import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Stack,
+  Typography,
+  styled,
+} from "@mui/material";
 import HeartCart from "components/cards/heart";
+import Dot from "components/cards/heart/Dot";
 import useWindowSize from "components/hooks/useWindowSize";
 import ClickIcon from "components/icons/ClickIcon";
 import { useRouter } from "next/router";
@@ -12,10 +20,10 @@ const MainSection = () => {
 
   return (
     <Stack position="relative">
-      <Box bgcolor="aqua">
-        {/* bgcolor="background.header" */}
+      <Box bgcolor="background.header">
+        {/*  */}
         <Container>
-          <Stack height={isPhone ? "100vh" : "50vh"}>
+          <Stack height={isPhone ? "100vh" : "auto"}>
             <Stack
               height="50%"
               direction={isPhone ? "row" : "column"}
@@ -27,8 +35,10 @@ const MainSection = () => {
                 lineHeight={isPhone ? "7.813rem" : "3.5rem"}
                 fontWeight="700"
                 mb={isPhone ? "30px" : ""}
+                my={!isPhone ? 2 : ""}
+                textAlign={!isPhone ? "center" : ""}
               >
-                Diagnostika <br /> Ekspert Tizimi
+                Diagnostika {isPhone && <br />} Ekspert Tizimi
               </Typography>
 
               <Button
@@ -43,6 +53,16 @@ const MainSection = () => {
                 </Typography>
               </Button>
             </Stack>
+
+            {!isPhone && (
+              <Stack position="relative" width="100%">
+                <Dot sx={{ position: "absolute", right: "50%", top: "50%" }} />
+                <Dot sx={{ position: "absolute", left: "65%", top: "70%" }} />
+                <Dot sx={{ position: "absolute", right: "70%", top: "60%" }} />
+                <Dot sx={{ position: "absolute", right: "45%", top: "20%" }} />
+                <Box component="img" src="/heart.png" width="100%" />
+              </Stack>
+            )}
             <Stack
               height="50%"
               width={isPhone ? "50%" : "100%"}
@@ -50,7 +70,11 @@ const MainSection = () => {
               alignItems="center"
               justifyContent="center"
             >
-              <Typography variant="body1">
+              <Typography
+                variant="body1"
+                textAlign={!isPhone ? "center" : ""}
+                mb={!isPhone ? 2 : 0}
+              >
                 Bu jarayonlar, tibbiyot, dori-darmonlar, amaliyotlar yoki
                 alternativ tadqiqot va davolash usullari orqali amalga
                 oshirilishi mumkin.
@@ -59,7 +83,7 @@ const MainSection = () => {
           </Stack>
         </Container>
       </Box>
-      <HeartCart />
+      {isPhone && <HeartCart />}
       <Box height="125px" mt="20px" bgcolor="success.main" mb="60px" />
     </Stack>
   );

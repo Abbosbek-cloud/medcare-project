@@ -110,6 +110,7 @@ const DoctorDrawer = (props) => {
       </Grid>
     </Box>
   );
+
   return (
     <Drawer
       anchor="right"

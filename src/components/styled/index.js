@@ -10,10 +10,7 @@ export const Doctor1Container = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "space-between",
   gap: "25px",
-  ".imageBox": {
-    position: "absolute",
-    right: "20px",
-    top: "20px",
+  "& .imageBox": {
     width: "100px",
     height: "100px",
   },
