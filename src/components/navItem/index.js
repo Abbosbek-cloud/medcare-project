@@ -10,6 +10,7 @@ const NavItem = (props) => {
         display: "flex",
         justifyContent: "start",
         alignItems: "center",
+        flexShrink: 0,
       }}
     >
       <Typography
