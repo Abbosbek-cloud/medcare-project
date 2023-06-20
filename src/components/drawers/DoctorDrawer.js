@@ -27,7 +27,7 @@ const DoctorDrawer = (props) => {
     <Box
       sx={{
         width: width > 900 ? 400 : 325,
-        p: "2rem",
+        p: width > 900 ? "2rem" : ".8rem",
         position: "relative",
         height: "100dvh",
       }}
