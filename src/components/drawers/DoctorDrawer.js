@@ -3,8 +3,10 @@ import CancelIcon from "components/icons/CancelIcon";
 import React from "react";
 import DrawerTable from "./DrawerTable";
 import TelegramWhiteIcon from "components/icons/TelegramWhiteIcon";
+import useWindowSize from "components/hooks/useWindowSize";
 
 const DoctorDrawer = (props) => {
+  const width = useWindowSize();
   const [user, setUser] = React.useState({
     name: "",
     about: "",
@@ -23,7 +25,12 @@ const DoctorDrawer = (props) => {
   }, [props?.data?.id]);
   const drawer = () => (
     <Box
-      sx={{ width: 400, p: "2rem", position: "relative", height: "100%" }}
+      sx={{
+        width: width > 900 ? 400 : 325,
+        p: "2rem",
+        position: "relative",
+        height: "100dvh",
+      }}
       role="presentation"
       display="flex"
       flexDirection="column"
