@@ -27,7 +27,7 @@ const MainLayout = (props) => {
   const toggleDrawer = (open) => {
     setDrawer(open);
   };
-  let isPhone = windowWidth > 900;
+  let isPhone = windowWidth > 1000;
   // console.log(window);
   return (
     <>
