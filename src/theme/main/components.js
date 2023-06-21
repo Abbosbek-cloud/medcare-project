@@ -133,7 +133,7 @@ export const components = {
     styleOverrides: {
       "*": {
         boxSizing: "border-box",
-        fontFamily: "Montserrat",
+        fontFamily: "'SF Pro Display', sans-serif",
       },
       html: {
         MozOsxFontSmoothing: "grayscale",
@@ -294,6 +294,9 @@ export const components = {
   },
   MuiTypography: {
     styleOverrides: {
+      root: {
+        fontFamily: "SF Pro Display",
+      },
       h6: {
         fontWeight: 600,
         fontSize: 17,
