@@ -19,17 +19,31 @@ export const Doctor1Container = styled(Box)(({ theme }) => ({
 export const DoctorContainer = styled(Box)(
   ({ theme, isPhone, isselected }) => ({
     padding: "20px",
+    position: "relative",
+    cursor: "pointer",
+    minHeight: "600px",
     borderTop: "1px solid hsla(0, 0%, 0%, .1)",
     borderInline: isselected
       ? "1px solid hsla(0, 0%, 0%, .1)"
       : isPhone
       ? ""
       : "",
+
     "& .cardImage": {
       width: "100%",
+      maxWidth: "396px",
       height: "312px",
       marginBottom: "20px",
       objectFit: "cover",
+    },
+
+    // Media query for screens larger than 1200px
+    "@media (max-width: 1280px)": {
+      borderInline: "1px solid hsla(0, 0%, 0%, .1)",
+
+      "& .cardImage": {
+        maxWidth: "none",
+      },
     },
   })
 );
