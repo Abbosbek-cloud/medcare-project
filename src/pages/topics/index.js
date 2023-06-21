@@ -1,7 +1,9 @@
-import { Container, Stack } from "@mui/material";
+import { Container, Grid, Stack } from "@mui/material";
 import CustomPagination from "components/CustomPagination";
+import DrawerDoctor from "components/cards/DrawerDoctor";
 import MainLayout from "components/layout/main";
 import { MainHeader } from "components/styled";
+import { topics } from "data/topics";
 import Head from "next/head";
 import React from "react";
 
@@ -26,6 +28,19 @@ const Page = () => {
             </MainHeader>
           </Container>
         </Stack>
+        <Container>
+          <Grid container>
+            {topics.map((item, index) => (
+              <Grid key={index} item xs={12} sm={6} lg={4} mb="30px">
+                <DrawerDoctor
+                  {...item}
+                  isIllness={true}
+                  isselected={[1, 4, 7].includes(index) ? "true" : undefined}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
         <Container>
           <CustomPagination />
         </Container>

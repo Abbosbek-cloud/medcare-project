@@ -11,10 +11,7 @@ const DrawerDoctor = (props) => {
   };
 
   return (
-    <DoctorContainer
-      isselected={props.isselected ? "true" : undefined}
-      sx={{ cursor: "pointer" }}
-    >
+    <DoctorContainer isselected={props.isselected ? "true" : undefined}>
       <Box component="img" src={props.image} className="cardImage" />
       <Typography
         fontSize="23px"
@@ -26,12 +23,13 @@ const DrawerDoctor = (props) => {
       </Typography>
       <Typography
         my={2}
-        fontSize="16px"
+        fontSize="22px"
         fontWeight="400"
         lineHeight="150%"
         color="text.light"
       >
-        {props.description || props.about}
+        {(props.description && `${props.description.slice(0, 138)}...`) ||
+          props.about}
       </Typography>
       {props.isDoctorPage && (
         <Button
@@ -44,9 +42,12 @@ const DrawerDoctor = (props) => {
       )}
       {props.isIllness && (
         <Stack
+          position={"absolute"}
+          bottom={"0"}
           direction="row"
           justifyContent="space-between"
           alignItems="center"
+          width={"90%"}
         >
           <Typography
             fontSize="13px"
@@ -60,9 +61,9 @@ const DrawerDoctor = (props) => {
             direction="row"
             alignItems="center"
             justifyContent="start"
-            gap={2}
+            gap={1}
           >
-            <RemoveRedEyeIcon color="neutral.main" width="40px" />
+            <RemoveRedEyeIcon sx={{ color: "neutral.main" }} width="40px" />
             <Typography
               fontSize="13px"
               fontWeight="400"
