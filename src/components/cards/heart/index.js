@@ -4,7 +4,7 @@ import Dot from "./Dot";
 
 const HeartCart = () => {
   return (
-    <Stack position="absolute" right="0" bottom="0" width="50%">
+    <Stack position="absolute" right="0" bottom="100px" width="50%">
       <Stack position="relative" width="499px" height="479px">
         <Dot sx={{ position: "absolute", right: "50%", top: "50%" }} />
         <Dot sx={{ position: "absolute", left: "65%", top: "70%" }} />

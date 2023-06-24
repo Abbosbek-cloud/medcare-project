@@ -31,12 +31,13 @@ const MainSection = () => {
               justifyContent={isPhone ? "space-between" : "space-evenly"}
             >
               <Typography
-                fontSize={isPhone ? "6.25rem" : "3rem"}
-                lineHeight={isPhone ? "7.813rem" : "3.5rem"}
+                fontSize={isPhone ? "8.25rem" : "3rem"}
+                lineHeight={isPhone ? "9.813rem" : "3.5rem"}
                 fontWeight="700"
                 mb={isPhone ? "30px" : ""}
                 my={!isPhone ? 2 : ""}
                 textAlign={!isPhone ? "center" : ""}
+                letterSpacing={isPhone ? "3px" : 0}
               >
                 Diagnostika {isPhone && <br />} Ekspert Tizimi
               </Typography>
@@ -71,7 +72,8 @@ const MainSection = () => {
               justifyContent="center"
             >
               <Typography
-                variant="body1"
+                fontSize="25px"
+                lineHeight="32px"
                 textAlign={!isPhone ? "center" : ""}
                 mb={!isPhone ? 2 : 0}
               >
@@ -84,7 +86,12 @@ const MainSection = () => {
         </Container>
       </Box>
       {isPhone && <HeartCart />}
-      <Box height="125px" mt="20px" bgcolor="success.main" mb="60px" />
+      <Box
+        height={isPhone ? "125px" : "70px"}
+        mt="20px"
+        bgcolor="success.main"
+        mb="60px"
+      />
     </Stack>
   );
 };
