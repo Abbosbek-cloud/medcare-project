@@ -34,6 +34,7 @@ export default function Home() {
             xs={12}
             sm={12}
             md={6}
+            height={isTablet ? "" : "50vh"}
             bgcolor="background.header"
             position="relative"
           >

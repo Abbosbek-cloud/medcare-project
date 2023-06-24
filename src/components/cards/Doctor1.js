@@ -27,14 +27,23 @@ const Doctor1 = (props) => {
         <Box component="img" src={props.image} className="imageBox" />
       </Stack>
 
-      <Typography fontSize="21px" fontWeight="700" lineHeight="125%">
+      <Typography
+        width={isTablet ? "80%" : ""}
+        fontSize="21px"
+        fontWeight="700"
+        lineHeight="125%"
+      >
         {props.about}
       </Typography>
-      <Box>
-        <Typography variant="h6" fontWeight="400" lineHeight="150%">
-          {props.citate}
-        </Typography>
-      </Box>
+
+      <Typography
+        width={isTablet ? "80%" : ""}
+        variant="h6"
+        fontWeight="400"
+        lineHeight="150%"
+      >
+        {props.citate}
+      </Typography>
     </Doctor1Container>
   );
 };
