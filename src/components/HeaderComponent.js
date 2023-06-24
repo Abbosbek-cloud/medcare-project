@@ -16,17 +16,13 @@ const HeaderComponent = (props) => {
         pb="30px"
         direction="row"
         justifyContent="space-between"
+        alignItems={"center"}
       >
-        <Typography variant="h3" color="text.lightDark">
+        <Typography variant="h3" fontWeight={400} color="text.lightDark">
           {props.name}
         </Typography>
-        <Typography
-          display="flex"
-          alignItems="center"
-          variant="body2"
-          color="success.main"
-        >
-          <Link href={props.link}>Yana</Link>
+        <Typography variant="body2" color="success.main">
+          <Link href={props.link}>{props.linkName}</Link>
         </Typography>
       </Stack>
       <Stack mb={2}>{props.children}</Stack>
