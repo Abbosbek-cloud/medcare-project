@@ -60,3 +60,16 @@ export const MainHeader = styled(Typography)(({ theme }) => ({
     lineHeight: "52px",
   },
 }));
+
+export const SingleTopicsHeader = styled(Typography)(({ theme }) => ({
+  color: "#242424",
+  fontSize: "36px",
+  fontWeight: "400",
+  lineHeight: "35px",
+  fontStyle: "normal",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "24px",
+    fontWeight: "400",
+    lineHeight: "32px",
+  },
+}));

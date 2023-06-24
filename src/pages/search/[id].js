@@ -12,12 +12,6 @@ import {
 } from "@mui/material";
 import Head from "next/head";
 
-// mana shu yerga textdan keyin mui select qo'ying
-
-// gridni md 8 berib muiselectga fullwidth berasiz
-
-// dizaynga qarasez select qande ekani koringan
-
 const SomePage = () => {
   return (
     <>

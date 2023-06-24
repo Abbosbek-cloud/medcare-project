@@ -7,3 +7,19 @@
   box-sizing: border-box;
   font-family: "SF Pro Display", sans-serif;
 }
+
+.section__single-topic-sidebar {
+  padding-top: 16px;
+  padding-bottom: 36px;
+}
+
+@media (max-width: 600px) {
+  .single-topic-container {
+    flex-direction: column-reverse !important;
+  }
+
+  .section__single-topic-sidebar {
+    padding-top: 8px;
+    padding-bottom: 18px;
+  }
+}
