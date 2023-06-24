@@ -33,8 +33,8 @@ const Doctor = (props) => {
     >
       <Box component="img" src={props.image} className="cardImage" />
       <Typography
-        fontSize="23px"
-        lineHeight="29px"
+        fontSize="27px"
+        lineHeight="30px"
         fontWeight="500"
         color="text.dark"
       >
@@ -42,18 +42,23 @@ const Doctor = (props) => {
       </Typography>
       <Typography
         my={2}
-        fontSize="16px"
+        fontSize="20px"
         fontWeight="400"
         lineHeight="150%"
         color="text.light"
       >
-        {props.description || props.about}
+        {(props.description && `${props.description.slice(0, 138)}...`) ||
+          props.about}
       </Typography>
       {props.isIllness && (
         <Stack
+          position={"absolute"}
+          bottom={"0"}
           direction="row"
           justifyContent="space-between"
           alignItems="center"
+          marginTop={"30px"}
+          width={"90%"}
         >
           <Typography
             fontSize="13px"
@@ -67,9 +72,9 @@ const Doctor = (props) => {
             direction="row"
             alignItems="center"
             justifyContent="start"
-            gap={2}
+            gap={1}
           >
-            <RemoveRedEyeIcon color="neutral.main" width="40px" />
+            <RemoveRedEyeIcon sx={{ color: "neutral.main" }} width="40px" />
             <Typography
               fontSize="13px"
               fontWeight="400"
