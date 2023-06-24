@@ -34,7 +34,7 @@ export default function Home() {
             xs={12}
             sm={12}
             md={6}
-            height={isTablet ? "" : "50vh"}
+            height={isTablet ? "auto" : "50vh"}
             bgcolor="background.header"
             position="relative"
           >
@@ -113,7 +113,12 @@ export default function Home() {
           ))}
         </HeaderComponent>
         <Box height="20px" />
-        <HeaderComponent name="Maqolalar" linkName="Yana" link="/topics" none={true}>
+        <HeaderComponent
+          name="Maqolalar"
+          linkName="Yana"
+          link="/topics"
+          none={true}
+        >
           <Grid container mb="60px">
             {topics.slice(0, 3).map((item, index) => (
               <Grid item xs={12} sm={12} md={4}>
