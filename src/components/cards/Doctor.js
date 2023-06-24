@@ -31,24 +31,26 @@ const Doctor = (props) => {
       sx={{ cursor: "pointer" }}
       onClick={handleOpenModal}
     >
-      <Box component="img" src={props.image} className="cardImage" />
-      <Typography
-        fontSize="23px"
-        lineHeight="29px"
-        fontWeight="500"
-        color="text.dark"
-      >
-        {props.name}
-      </Typography>
-      <Typography
-        my={2}
-        fontSize="16px"
-        fontWeight="400"
-        lineHeight="150%"
-        color="text.light"
-      >
-        {props.description || props.about}
-      </Typography>
+      <Stack>
+        <Box component="img" src={props.image} className="cardImage" mb={2} />
+        <Typography
+          fontSize="23px"
+          lineHeight="29px"
+          fontWeight="500"
+          color="text.dark"
+        >
+          {props.name}
+        </Typography>
+        <Typography
+          my={2}
+          fontSize="16px"
+          fontWeight="400"
+          lineHeight="150%"
+          color="text.light"
+        >
+          {props.description || props.about}
+        </Typography>
+      </Stack>
       {props.isIllness && (
         <Stack
           direction="row"

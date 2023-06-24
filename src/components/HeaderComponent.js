@@ -20,7 +20,12 @@ const HeaderComponent = (props) => {
         <Typography variant="h3" color="text.lightDark">
           {props.name}
         </Typography>
-        <Typography variant="body2" color="success.main">
+        <Typography
+          display="flex"
+          alignItems="center"
+          variant="body2"
+          color="success.main"
+        >
           <Link href={props.link}>Yana</Link>
         </Typography>
       </Stack>
