@@ -23,6 +23,9 @@ export const DoctorContainer = styled(Box)(
     cursor: "pointer",
     minHeight: "600px",
     borderTop: "1px solid hsla(0, 0%, 0%, .1)",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
     borderInline: isselected
       ? "1px solid hsla(0, 0%, 0%, .1)"
       : isPhone
@@ -33,7 +36,6 @@ export const DoctorContainer = styled(Box)(
       width: "100%",
       maxWidth: "396px",
       height: "312px",
-      marginBottom: "20px",
       objectFit: "cover",
     },
 
