@@ -11,6 +11,7 @@ import {
   MenuItem,
 } from "@mui/material";
 import Head from "next/head";
+import { CircleTag } from "components/styled";
 
 const SomePage = () => {
   return (
@@ -68,6 +69,14 @@ const SomePage = () => {
                   <MenuItem value={30}>Hansirash</MenuItem>
                 </Select>
               </FormControl>
+            </Grid>
+          </Grid>
+          <Grid container justifyContent="center" marginTop={4}>
+            <Grid item md={9} display={"flex"} gap={2}>
+              <CircleTag>Teri ko'karishi</CircleTag>
+              <CircleTag>Nafas olish qiynalishi</CircleTag>
+              <CircleTag>Ko‘krak qafasida og‘riq</CircleTag>
+              <CircleTag>Es-hushni buzilishi</CircleTag>
             </Grid>
           </Grid>
         </Stack>
