@@ -75,3 +75,21 @@ export const SingleTopicsHeader = styled(Typography)(({ theme }) => ({
     lineHeight: "32px",
   },
 }));
+
+export const CircleTag = styled("p")(({ theme }) => ({
+  padding: "14px 24px",
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundColor: theme.palette.background.header,
+  borderRadius: "50px",
+  border: "1px solid rgba(0, 0, 0, 0.10)",
+  color: "#000",
+  fontSize: "18px",
+  fontWeight: "400",
+  lineHeight: "25px",
+  fontStyle: "normal",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "26px",
+  },
+}));
