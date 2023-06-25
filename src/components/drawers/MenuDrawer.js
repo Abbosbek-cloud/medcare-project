@@ -13,12 +13,23 @@ const MenuDrawer = (props) => {
   const router = useRouter();
   const list = (anchor) => (
     <Box
-      sx={{ width: 300, p: 2, bgcolor: "#F9F9F9", height: "100%" }}
+      sx={{
+        width: 300,
+        p: 2,
+        backgroundColor: "background.header",
+        height: "100%",
+      }}
       role="presentation"
       onKeyDown={() => props.toggleDrawer(false)}
     >
       {/* drawer components come here */}
-      <Stack px={0.1} direction="column" gap={10}>
+      <Stack
+        px={0.1}
+        pb={4}
+        direction="column"
+        justifyContent={"space-between"}
+        height={"100%"}
+      >
         <Stack
           px={1}
           direction="row"
