@@ -11,7 +11,6 @@ import React from "react";
 
 const Page = () => {
   const router = useRouter();
-  console.log(router);
   return (
     <>
       <Head>
@@ -119,7 +118,7 @@ const Page = () => {
           </Stack>
           <Grid container>
             {doctors.map((item, index) => (
-              <Grid key={index} item xs={12} sm={12} md={4} mb="30px">
+              <Grid item key={index} xs={12} sm={12} md={4} mb="30px">
                 <DrawerDoctor
                   {...item}
                   isDoctorPage={true}

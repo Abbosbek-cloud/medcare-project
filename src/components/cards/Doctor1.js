@@ -24,7 +24,12 @@ const Doctor1 = (props) => {
             {props.kasbi}
           </Typography>
         </Stack>
-        <Box component="img" src={props.image} className="imageBox" />
+        <Box
+          component="img"
+          loading="lazy"
+          src={props.image}
+          className="imageBox"
+        />
       </Stack>
 
       <Typography

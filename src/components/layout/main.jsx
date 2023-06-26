@@ -28,7 +28,6 @@ const MainLayout = (props) => {
     setDrawer(open);
   };
   let isPhone = windowWidth > 1000;
-  // console.log(window);
   return (
     <>
       <Stack py={2} sx={{ backgroundColor: "background.header" }}>
@@ -41,7 +40,7 @@ const MainLayout = (props) => {
             sx={{ cursor: "pointer" }}
             onClick={() => router.push("/")}
           >
-            <Box component="img" src="/svg.svg" />
+            <Box component="img" loading="lazy" src="/svg.svg" />
             <Typography
               variant="logoPrint"
               fontWeight="500"
@@ -113,7 +112,7 @@ const MainLayout = (props) => {
               sx={{ cursor: "pointer" }}
               onClick={() => router.push("/")}
             >
-              <Box component="img" src="/svg.svg" />
+              <Box component="img" loading="lazy" src="/svg.svg" />
               <Typography
                 variant="logoPrint"
                 fontWeight="500"

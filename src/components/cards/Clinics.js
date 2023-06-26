@@ -11,6 +11,7 @@ const Clinics = (props) => {
         <Grid item xs={12} sm={12} md={3}>
           <Box
             component="img"
+            loading="lazy"
             src={props.image}
             width="100%"
             height="150px"

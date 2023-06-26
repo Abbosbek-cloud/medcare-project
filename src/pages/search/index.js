@@ -20,11 +20,9 @@ const Page = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const { sick, selected } = useSelector((state) => state.search);
-  const [sickness, setSickness] = React.useState(null);
 
   React.useEffect(() => {
     dispatch(setIllness(inlless));
-    setSickness(inlless[0].id);
   }, []);
 
   return (
@@ -46,7 +44,7 @@ const Page = () => {
           sx={{ cursor: "pointer" }}
           onClick={() => router.push("/")}
         >
-          <Box component="img" src="/svg.svg" />
+          <Box component="img" loading="lazy" src="/svg.svg" />
           <Typography variant="logoPrint" fontWeight="500" color="success.main">
             MedCare
           </Typography>
@@ -84,16 +82,14 @@ const Page = () => {
               >
                 {sick.map((item) => {
                   let isExist = selected.includes(item.id);
-                  console.log(isExist);
                   return (
                     <Chip
                       key={item.id}
                       label={item.name}
                       onClick={() => dispatch(toggleSelected(item.id))}
-                      onDelete={() => console.log("deleted")}
+                      onDelete={() => {}}
                       deleteIcon={isExist ? <DoneIcon /> : <div />}
                       variant={isExist ? "outlined" : ""}
-                      // color="success"
                       sx={{
                         borderColor: "hsla(155, 79%, 43%, 1)",
                       }}

@@ -28,6 +28,7 @@ export default function Home() {
         <MainSection />
         <Grid container height="90vh" mb="60px">
           <Grid
+            item
             xs={12}
             sm={12}
             md={6}
@@ -37,6 +38,7 @@ export default function Home() {
           >
             <Box
               component="img"
+              loading="lazy"
               src="/reception.png"
               width="70%"
               height="70%"
@@ -49,6 +51,7 @@ export default function Home() {
             />
           </Grid>
           <Grid
+            item
             xs={12}
             sm={12}
             md={6}
@@ -86,6 +89,7 @@ export default function Home() {
         </Grid>
         <Box
           component="img"
+          loading="lazy"
           src="/bgImage.png"
           width="100%"
           height={isTablet ? "100vh" : "50vh"}
@@ -95,8 +99,8 @@ export default function Home() {
         <HeaderComponent name="Shifokorlarimiz" link="/doctors">
           <Grid container spacing={2}>
             {doctors.slice(0, 2).map((item) => (
-              <Grid item xs={12} sm={12} md={6}>
-                <Doctor1 key={item.id} {...item} />
+              <Grid key={item.id} item xs={12} sm={12} md={6}>
+                <Doctor1 {...item} />
               </Grid>
             ))}
           </Grid>
@@ -118,9 +122,8 @@ export default function Home() {
         >
           <Grid container mb="60px">
             {topics.slice(0, 3).map((item, index) => (
-              <Grid item xs={12} sm={12} md={4}>
+              <Grid key={item.id} item xs={12} sm={12} md={4}>
                 <Doctor
-                  key={item.id}
                   {...item}
                   isIllness={true}
                   isselected={[1, 4, 7].includes(index) ? "true" : undefined}
@@ -132,6 +135,7 @@ export default function Home() {
         <Box
           component="img"
           src="/bgImage2.png"
+          loading="lazy"
           width="100%"
           height={isTablet ? "100vh" : "50vh"}
           sx={{ objectFit: "cover" }}
