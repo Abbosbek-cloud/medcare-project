@@ -33,7 +33,7 @@ const MainSection = () => {
               <Typography
                 fontSize={isPhone ? "8.25rem" : "3rem"}
                 lineHeight={isPhone ? "9.813rem" : "3.5rem"}
-                fontWeight="700"
+                fontWeight="500"
                 mb={isPhone ? "30px" : ""}
                 my={!isPhone ? 2 : ""}
                 textAlign={!isPhone ? "center" : ""}
@@ -43,7 +43,7 @@ const MainSection = () => {
               </Typography>
 
               <Button
-                sx={{ padding: "19px 50px" }}
+                sx={{ padding: "19px 50px", borderRadius: "13px" }}
                 variant="contained"
                 color="success"
                 endIcon={<ClickIcon />}
@@ -68,8 +68,9 @@ const MainSection = () => {
               height="50%"
               width={isPhone ? "50%" : "100%"}
               p={isPhone ? "80px" : ""}
+              flexDirection="column"
               alignItems="center"
-              justifyContent="center"
+              justifyContent={isPhone ? "space-between" : "center"}
             >
               <Typography
                 fontSize="25px"
@@ -81,6 +82,7 @@ const MainSection = () => {
                 alternativ tadqiqot va davolash usullari orqali amalga
                 oshirilishi mumkin.
               </Typography>
+              {isPhone && <Box component="div" height="40px" />}
             </Stack>
           </Stack>
         </Container>

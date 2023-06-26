@@ -1,15 +1,13 @@
 import {
   Box,
   Button,
-  FormControl,
   Grid,
-  InputLabel,
-  MenuItem,
-  Select,
   Stack,
   Typography,
   Chip,
+  TextField,
 } from "@mui/material";
+import DoneIcon from "@mui/icons-material/Done";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
@@ -67,46 +65,52 @@ const Page = () => {
             Kasallik turini aniqlash uchun <br /> kasallik alomatini tanlang
           </Typography>
           <Grid container justifyContent="center" marginTop={2}>
-            <Grid item md={4}>
-              <FormControl fullWidth variant="standard">
-                <InputLabel id="demo-simple-select-label">
-                  Quyida kasallik alomatlarini tanlang
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={sickness}
-                  name="sick"
-                  sx={{ minWidth: "100%" }}
-                  label={!sickness && "Quyida kasallik alomatlarini tanlangge"}
-                  onChange={(e) => {
-                    let selectedData = inlless.find(
-                      (item) => item.id === e.target.value
-                    );
-                    dispatch(toggleSelected(selectedData));
-                    setSickness(selectedData);
-                  }}
-                  fullWidth
-                >
-                  {sick?.map((item) => (
-                    <MenuItem value={item.id}>{item.name}</MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+            <Grid item xs={11} md={4}>
+              <TextField
+                fullWidth
+                size="small"
+                variant="standard"
+                sx={{ textAlign: "center" }}
+                placeholder="Qidiruv"
+              />
+            </Grid>
+            <Grid item xs={11} md={9}>
+              <Stack
+                p={3}
+                direction="row"
+                flexWrap="wrap"
+                gap={2}
+                justifyContent="center"
+              >
+                {sick.map((item) => {
+                  let isExist = selected.includes(item.id);
+                  console.log(isExist);
+                  return (
+                    <Chip
+                      key={item.id}
+                      label={item.name}
+                      onClick={() => dispatch(toggleSelected(item.id))}
+                      onDelete={() => console.log("deleted")}
+                      deleteIcon={isExist ? <DoneIcon /> : <div />}
+                      variant={isExist ? "outlined" : ""}
+                      // color="success"
+                      sx={{
+                        borderColor: "hsla(155, 79%, 43%, 1)",
+                      }}
+                    />
+                  );
+                })}
+              </Stack>
             </Grid>
           </Grid>
-          <Stack p={3} direction="row" spacing={1}>
-            {selected.map((item) => (
-              <Chip
-                label={item.name}
-                onDelete={() => dispatch(toggleSelected(item))}
-              />
-            ))}
-          </Stack>
         </Stack>
         <Stack p={3}>
           <Stack borderTop="1px solid hsla(0, 0%, 0%, .1)" pt={2}>
-            <Button variant="contained" color="success">
+            <Button
+              sx={{ borderRadius: "13px" }}
+              variant="contained"
+              color="success"
+            >
               Keyingisi
             </Button>
           </Stack>

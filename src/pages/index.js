@@ -1,10 +1,9 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import MainLayout from "components/layout/main";
 import HeaderComponent from "components/HeaderComponent";
 import { doctors } from "data/doctors";
 import Doctor1 from "components/cards/Doctor1";
-import { Box, Button, Divider, Grid, Stack, Typography } from "@mui/material";
+import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
 import { topics } from "data/topics";
 import Doctor from "components/cards/Doctor";
 import EastIcon from "@mui/icons-material/East";
@@ -13,8 +12,6 @@ import { clinics } from "data/clinics";
 import Clinics from "components/cards/Clinics";
 import MainSection from "components/sections/main";
 import useWindowSize from "components/hooks/useWindowSize";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const windowWidth = useWindowSize();
