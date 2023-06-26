@@ -33,7 +33,7 @@ const SomePage = () => {
           sx={{ cursor: "pointer" }}
           onClick={() => router.push("/")}
         >
-          <Box component="img" src="/svg.svg" />
+          <Box component="img" loading="lazy" src="/svg.svg" />
           <Typography variant="logoPrint" fontWeight="500" color="success.main">
             MedCare
           </Typography>

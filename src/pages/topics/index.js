@@ -31,7 +31,7 @@ const Page = () => {
         <Container>
           <Grid container>
             {topics.map((item, index) => (
-              <Grid key={index} item xs={12} sm={6} lg={4} mb="30px">
+              <Grid item key={index} xs={12} sm={6} lg={4} mb="30px">
                 <DrawerDoctor
                   {...item}
                   isIllness={true}

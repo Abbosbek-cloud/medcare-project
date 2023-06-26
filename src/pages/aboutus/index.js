@@ -61,6 +61,7 @@ const Page = () => {
                 <Grid item xs={12} sm={12} height="50%">
                   <Box
                     component="img"
+                    loading="lazy"
                     src="/medic.png"
                     width="100%"
                     height="100%"
@@ -71,6 +72,7 @@ const Page = () => {
             <Grid item xs={12} sm={12} md={6}>
               <Box
                 component="img"
+                loading="lazy"
                 src="/rightBarImg.png"
                 width="100%"
                 height="100%"

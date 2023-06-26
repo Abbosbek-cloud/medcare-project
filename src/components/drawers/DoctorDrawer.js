@@ -74,6 +74,7 @@ const DoctorDrawer = (props) => {
         <Box
           component="img"
           src={user.image}
+          loading="lazy"
           width="100%"
           height="250px"
           sx={{ objectFit: "cover" }}

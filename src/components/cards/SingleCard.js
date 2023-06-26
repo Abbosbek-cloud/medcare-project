@@ -52,9 +52,9 @@ const SingleCard = (props) => {
       <Box
         mt={"24px"}
         component="img"
+        loading="lazy"
         src="/topic-mother-img.png"
         width="100%"
-        // height="540px"
         objectFit="cover"
       />
       <Typography

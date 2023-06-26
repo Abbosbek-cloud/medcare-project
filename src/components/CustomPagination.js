@@ -135,8 +135,6 @@ const CustomPagination = () => {
               </button>
             );
           } else {
-            console.log(item);
-            console.log(type);
             children = (
               <button className={"button " + type} type="button" {...item}>
                 {type === "next" ? (

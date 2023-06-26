@@ -14,7 +14,6 @@ const Doctor = (props) => {
     ) {
       return;
     }
-    console.log(open);
 
     setModal(open);
   };
@@ -31,7 +30,12 @@ const Doctor = (props) => {
       sx={{ cursor: "pointer" }}
       onClick={handleOpenModal}
     >
-      <Box component="img" src={props.image} className="cardImage" />
+      <Box
+        component="img"
+        loading="lazy"
+        src={props.image}
+        className="cardImage"
+      />
       <Typography
         fontSize="27px"
         lineHeight="30px"

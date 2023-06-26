@@ -45,7 +45,7 @@ const MenuDrawer = (props) => {
             sx={{ cursor: "pointer" }}
             onClick={() => router.push("/")}
           >
-            <Box component="img" src="/svg.svg" />
+            <Box component="img" loading="lazy" src="/svg.svg" />
             <Typography
               variant="logoPrint"
               fontWeight="300"

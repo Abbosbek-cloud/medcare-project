@@ -10,7 +10,13 @@ const HeartCart = () => {
         <Dot sx={{ position: "absolute", left: "65%", top: "70%" }} />
         <Dot sx={{ position: "absolute", right: "70%", top: "60%" }} />
         <Dot sx={{ position: "absolute", right: "45%", top: "20%" }} />
-        <Box component="img" src="/heart.png" width="499px" height="479px" />
+        <Box
+          component="img"
+          loading="lazy"
+          src="/heart.png"
+          width="499px"
+          height="479px"
+        />
         {/* width="36" height="36" position="absolute" left="10" */}
       </Stack>
     </Stack>

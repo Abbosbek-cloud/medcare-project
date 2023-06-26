@@ -12,7 +12,12 @@ const DrawerDoctor = (props) => {
 
   return (
     <DoctorContainer isselected={props.isselected ? "true" : undefined}>
-      <Box component="img" src={props.image} className="cardImage" />
+      <Box
+        component="img"
+        loading="lazy"
+        src={props.image}
+        className="cardImage"
+      />
       <Typography
         fontSize="23px"
         lineHeight="29px"
