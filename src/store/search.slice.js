@@ -25,13 +25,9 @@ export const searchSlice = createSlice({
       }
     },
     toggleSelected(state, action) {
-      const isExist = state.selected.find(
-        (item) => item.id === action.payload.id
-      );
+      const isExist = state.selected.includes(action.payload);
       if (isExist) {
-        let filtered = state.selected.filter(
-          (item) => item.id !== action.payload.id
-        );
+        let filtered = state.selected.filter((item) => item !== action.payload);
         state.selected = filtered;
       } else {
         state.selected = [...state.selected, action.payload];
