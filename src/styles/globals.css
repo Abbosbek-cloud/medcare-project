@@ -18,6 +18,47 @@
   color: #17c37b !important;
 }
 
+.heart-box {
+  -webkit-animation: 0.8s infinite beatHeart;
+  animation: 0.8s infinite beatHeart;
+}
+
+@-webkit-keyframes beatHeart {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes beatHeart {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @media (max-width: 600px) {
   .single-topic-container {
     flex-direction: column-reverse !important;
