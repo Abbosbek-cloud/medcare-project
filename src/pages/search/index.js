@@ -60,7 +60,7 @@ const Page = () => {
       >
         <Stack>
           <Typography textAlign="center" variant="h4">
-            Kasallik turini aniqlash uchun <br /> kasallik alomatini tanlang
+            Kasallik turini aniqlash uchun <br /> kasallik alomatlarini tanlang
           </Typography>
           <Grid container justifyContent="center" marginTop={2}>
             <Grid item xs={11} md={4}>
@@ -70,9 +70,15 @@ const Page = () => {
                 variant="standard"
                 sx={{ textAlign: "center" }}
                 placeholder="Qidiruv"
+                color="success"
+                inputProps={{
+                  style: {
+                    textAlign: "center",
+                  },
+                }}
               />
             </Grid>
-            <Grid item xs={11} md={9}>
+            <Grid item xs={11} md={9} mt={6}>
               <Stack
                 p={3}
                 direction="row"
@@ -88,10 +94,25 @@ const Page = () => {
                       label={item.name}
                       onClick={() => dispatch(toggleSelected(item.id))}
                       onDelete={() => {}}
-                      deleteIcon={isExist ? <DoneIcon /> : <div />}
+                      deleteIcon={
+                        isExist ? (
+                          <DoneIcon className="delete-chip-icon" />
+                        ) : (
+                          <div />
+                        )
+                      }
                       variant={isExist ? "outlined" : ""}
+                      size="small"
                       sx={{
-                        borderColor: "hsla(155, 79%, 43%, 1)",
+                        padding: "20px 24px",
+                        backgroundColor: isExist
+                          ? "#fff"
+                          : "rgba(69, 69, 69, 0.05)",
+                        borderColor: "#17C37B",
+                        borderRadius: "50px",
+                        fontSize: "18px",
+                        fontWeight: "400",
+                        color: isExist ? "#17C37B" : "#000",
                       }}
                     />
                   );
@@ -100,8 +121,8 @@ const Page = () => {
             </Grid>
           </Grid>
         </Stack>
-        <Stack p={3}>
-          <Stack borderTop="1px solid hsla(0, 0%, 0%, .1)" pt={2}>
+        <Stack p={4}>
+          <Stack borderTop="1px solid hsla(0, 0%, 0%, .1)" pt={4}>
             <Button
               sx={{ borderRadius: "13px" }}
               variant="contained"

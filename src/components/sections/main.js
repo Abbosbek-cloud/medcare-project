@@ -13,10 +13,18 @@ import ClickIcon from "components/icons/ClickIcon";
 import { useRouter } from "next/router";
 import React from "react";
 
+import useSound from "use-sound";
+
+import someSound from "/heart-beat.mp3";
+
+console.log(someSound);
+
 const MainSection = () => {
   const router = useRouter();
   const width = useWindowSize();
   let isPhone = width > 900;
+
+  const [play] = useSound(someSound);
 
   return (
     <Stack position="relative">
@@ -56,7 +64,7 @@ const MainSection = () => {
             </Stack>
 
             {!isPhone && (
-              <Stack position="relative" width="100%">
+              <Stack position="relative" width="100%" onClick={play}>
                 <Dot sx={{ position: "absolute", right: "50%", top: "50%" }} />
                 <Dot sx={{ position: "absolute", left: "65%", top: "70%" }} />
                 <Dot sx={{ position: "absolute", right: "70%", top: "60%" }} />
