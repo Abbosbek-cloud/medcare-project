@@ -15,7 +15,7 @@ const Clinics = (props) => {
             src={props.image}
             width="100%"
             height="150px"
-            objectFit="cover"
+            objectfit="cover"
           />
         </Grid>
         <Grid item xs={12} sm={12} md={6}>

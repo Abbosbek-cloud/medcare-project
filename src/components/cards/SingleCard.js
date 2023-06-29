@@ -55,7 +55,7 @@ const SingleCard = (props) => {
         loading="lazy"
         src="/topic-mother-img.png"
         width="100%"
-        objectFit="cover"
+        objectfit="cover"
       />
       <Typography
         fontSize={20}
