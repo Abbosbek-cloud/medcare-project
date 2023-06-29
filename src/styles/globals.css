@@ -19,8 +19,8 @@
 }
 
 .heart-box {
-  -webkit-animation: 0.8s infinite beatHeart;
-  animation: 0.8s infinite beatHeart;
+  -webkit-animation: 1s infinite beatHeart;
+  animation: 1s infinite beatHeart;
 }
 
 @-webkit-keyframes beatHeart {
