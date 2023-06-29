@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Container,
-  Stack,
-  Typography,
-  styled,
-} from "@mui/material";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import HeartCart from "components/cards/heart";
 import Dot from "components/cards/heart/Dot";
 import useWindowSize from "components/hooks/useWindowSize";
@@ -13,23 +6,33 @@ import ClickIcon from "components/icons/ClickIcon";
 import { useRouter } from "next/router";
 import React from "react";
 
-import useSound from "use-sound";
-
-import someSound from "/heart-beat.mp3";
-
-console.log(someSound);
-
 const MainSection = () => {
+  const audioRef = React.useRef(null);
   const router = useRouter();
   const width = useWindowSize();
   let isPhone = width > 900;
 
-  const [play] = useSound(someSound);
-
+  React.useEffect(() => {
+    if (audioRef && audioRef.current) {
+      audioRef.current.play().catch((err) => {
+        console.log(err);
+      });
+    }
+  }, []);
   return (
     <Stack position="relative">
       <Box bgcolor="background.header">
         {/*  */}
+        <audio
+          ref={audioRef}
+          id="my-audio"
+          playsInline
+          loop
+          src="/heart-beat.mp3"
+        >
+          Your browser does not support the
+          <code>audio</code> element.
+        </audio>
         <Container>
           <Stack height={isPhone ? "100vh" : "auto"}>
             <Stack
@@ -64,7 +67,7 @@ const MainSection = () => {
             </Stack>
 
             {!isPhone && (
-              <Stack position="relative" width="100%" onClick={play}>
+              <Stack position="relative" width="100%" onClick={() => {}}>
                 <Dot sx={{ position: "absolute", right: "50%", top: "50%" }} />
                 <Dot sx={{ position: "absolute", left: "65%", top: "70%" }} />
                 <Dot sx={{ position: "absolute", right: "70%", top: "60%" }} />
