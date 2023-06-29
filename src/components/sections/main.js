@@ -15,16 +15,16 @@ import React from "react";
 
 import useSound from "use-sound";
 
-import someSound from "/heart-beat.mp3";
+// import someSound from "/heart-beat.mp3";
 
-console.log(someSound);
+// console.log(someSound);
 
 const MainSection = () => {
   const router = useRouter();
   const width = useWindowSize();
   let isPhone = width > 900;
 
-  const [play] = useSound(someSound);
+  // const [play] = useSound(someSound);
 
   return (
     <Stack position="relative">
@@ -64,7 +64,7 @@ const MainSection = () => {
             </Stack>
 
             {!isPhone && (
-              <Stack position="relative" width="100%" onClick={play}>
+              <Stack position="relative" width="100%">
                 <Dot sx={{ position: "absolute", right: "50%", top: "50%" }} />
                 <Dot sx={{ position: "absolute", left: "65%", top: "70%" }} />
                 <Dot sx={{ position: "absolute", right: "70%", top: "60%" }} />
