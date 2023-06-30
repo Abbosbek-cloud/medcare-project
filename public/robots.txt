@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://med-care.uz
+
+# Sitemaps
+Sitemap: https://med-care.uz/sitemap.xml
