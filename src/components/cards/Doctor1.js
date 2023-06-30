@@ -33,7 +33,7 @@ const Doctor1 = (props) => {
       </Stack>
 
       <Typography
-        width={isTablet ? "80%" : ""}
+        width={isTablet ? "80%" : "100%"}
         fontSize="21px"
         fontWeight="700"
         lineHeight="125%"
@@ -42,7 +42,7 @@ const Doctor1 = (props) => {
       </Typography>
 
       <Typography
-        width={isTablet ? "80%" : ""}
+        width={isTablet ? "80%" : "100%"}
         variant="h6"
         fontWeight="400"
         lineHeight="150%"
