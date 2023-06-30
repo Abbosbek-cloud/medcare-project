@@ -8,9 +8,21 @@ import { doctors } from "data/doctors";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { GetAllDoctorsThunk } from "store/doctor.slice";
 
 const Page = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
+  const [page, setPage] = React.useState(1);
+
+  const getDoctorsData = React.useCallback(() => {
+    dispatch(GetAllDoctorsThunk({ id: page }));
+  }, [dispatch, page]);
+
+  React.useEffect(() => {
+    getDoctorsData();
+  }, [getDoctorsData]);
   return (
     <>
       <Head>
