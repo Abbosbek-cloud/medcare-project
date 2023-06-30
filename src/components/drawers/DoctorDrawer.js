@@ -108,9 +108,10 @@ const DoctorDrawer = (props) => {
           <Button
             fullWidth
             color="info"
+            size="small"
             variant="contained"
             startIcon={<TelegramWhiteIcon fill="#fff" />}
-            sx={{ color: "#fff" }}
+            sx={{ color: "#fff", height: "40.16px", padding: "0" }}
           >
             Ro&apos;yhatdan o&apos;tish
           </Button>
