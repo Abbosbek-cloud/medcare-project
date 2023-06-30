@@ -19,6 +19,7 @@ const MainSection = () => {
       });
     }
   }, []);
+
   return (
     <Stack position="relative">
       <Box bgcolor="background.header">
@@ -67,7 +68,13 @@ const MainSection = () => {
             </Stack>
 
             {!isPhone && (
-              <Stack position="relative" width="100%" onClick={() => {}}>
+              <Stack
+                my={3}
+                position="relative"
+                width="100%"
+                className="heart-box"
+                onClick={() => {}}
+              >
                 <Dot sx={{ position: "absolute", right: "50%", top: "50%" }} />
                 <Dot sx={{ position: "absolute", left: "65%", top: "70%" }} />
                 <Dot sx={{ position: "absolute", right: "70%", top: "60%" }} />
@@ -80,6 +87,7 @@ const MainSection = () => {
                 />
               </Stack>
             )}
+
             <Stack
               height="50%"
               width={isPhone ? "50%" : "100%"}
