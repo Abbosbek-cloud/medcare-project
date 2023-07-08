@@ -118,18 +118,6 @@ const Page = () => {
             />
           </Stack>
           <Grid container>
-<<<<<<< HEAD
-            {doctors &&
-              doctors?.map((item, index) => (
-                <Grid item key={index} xs={12} sm={12} md={4} mb="30px">
-                  <DrawerDoctor
-                    {...item}
-                    isDoctorPage={true}
-                    isselected={[1, 4, 7].includes(index) ? "true" : undefined}
-                  />
-                </Grid>
-              ))}
-=======
             {doctors.map((item, index) => (
               <Grid item key={index} xs={12} sm={12} md={4} mb="30px">
                 <DrawerDoctor
@@ -139,7 +127,6 @@ const Page = () => {
                 />
               </Grid>
             ))}
->>>>>>> ac89c04934c21e6562894c9d6bcfae43f7bf0911
           </Grid>
           <CustomPagination />
         </Container>
