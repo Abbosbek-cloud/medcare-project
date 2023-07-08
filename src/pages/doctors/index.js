@@ -4,21 +4,20 @@ import DrawerDoctor from "components/cards/DrawerDoctor";
 import MainLayout from "components/layout/main";
 import NavItem from "components/navItem";
 import { MainHeader } from "components/styled";
-import { doctors } from "data/doctors";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { GetAllDoctorsThunk } from "store/doctor.slice";
 
 const Page = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const [page, setPage] = React.useState(1);
+  const { doctors } = useSelector((state) => state.doctorSlice);
 
   const getDoctorsData = React.useCallback(() => {
-    dispatch(GetAllDoctorsThunk({ id: page }));
-  }, [dispatch, page]);
+    dispatch(GetAllDoctorsThunk());
+  }, [dispatch]);
 
   React.useEffect(() => {
     getDoctorsData();
@@ -129,15 +128,16 @@ const Page = () => {
             />
           </Stack>
           <Grid container>
-            {doctors.map((item, index) => (
-              <Grid item key={index} xs={12} sm={12} md={4} mb="30px">
-                <DrawerDoctor
-                  {...item}
-                  isDoctorPage={true}
-                  isselected={[1, 4, 7].includes(index) ? "true" : undefined}
-                />
-              </Grid>
-            ))}
+            {doctors &&
+              doctors?.map((item, index) => (
+                <Grid item key={index} xs={12} sm={12} md={4} mb="30px">
+                  <DrawerDoctor
+                    {...item}
+                    isDoctorPage={true}
+                    isselected={[1, 4, 7].includes(index) ? "true" : undefined}
+                  />
+                </Grid>
+              ))}
           </Grid>
           <CustomPagination />
         </Container>
